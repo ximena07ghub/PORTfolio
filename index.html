@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--
+    XR Studio - Portafolio web
+    Estructura limpia basada en el sitio original:
+    hero centrado, servicios en tarjetas, paquetes, proceso circular,
+    portafolio visual como espacios editables, opiniones, FAQ, sobre mi y contacto.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="XR Studio crea sitios web modernos, catálogos digitales, landing pages y portafolios visuales para negocios.">
+  <title>XR Studio | Desarrollo web profesional</title>
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <!-- Header fijo: navegación principal y botón de contacto. -->
+  <header class="site-header" id="inicio">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio de XR Studio">
+      <span>XR</span><strong>Studio</strong>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#contacto" class="nav-cta">Contactar</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero: mantiene la esencia original, texto centrado y botones redondeados. -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner reveal">
+        <p class="pill">Desarrollo Web Profesional</p>
+        <h1>Tu negocio merece una <span>web que venda</span></h1>
+        <p class="hero-text">Creamos sitios web elegantes, rápidos y optimizados para convertir visitantes en clientes. Diseño personalizado, chat en vivo, catálogos y más.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#paquetes">Ver Paquetes</a>
+          <a class="btn btn-light" href="#contacto">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            Hablemos de tu proyecto
+          </a>
+        </div>
+
+        <!-- Métricas: igual que la intención original, sin recuadros. -->
+        <div class="metrics" aria-label="Indicadores de XR Studio">
+          <article>
+            <strong>50+</strong>
+            <span>Proyectos entregados</span>
+          </article>
+          <article>
+            <strong>100%</strong>
+            <span>Satisfacción</span>
+          </article>
+          <article>
+            <strong>24/7</strong>
+            <span>Soporte técnico</span>
+          </article>
+          <article>
+            <strong>SEO</strong>
+            <span>Optimizado</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios: conserva las tarjetas del diseño original, solo cambia la paleta. -->
+    <section class="section services" id="servicios">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Servicios</span>
+          <h2>Soluciones web diseñadas para crecer</h2>
+          <p>Cada servicio está pensado para resolver una necesidad específica de tu negocio, combinando tecnología y diseño.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-icon blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 4v-4"></path>
+              </svg>
+            </div>
+            <h3>Páginas Corporativas + Chat</h3>
+            <p>Sitios elegantes para consultorios, abogados, escuelas y más. Incluyen WhatsApp flotante o chats automatizados para responder dudas al instante.</p>
+            <ul class="check-list">
+              <li>Diseño UI personalizado</li>
+              <li>Chat de soporte integrado</li>
+              <li>Hosting en Netlify</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon purple" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M16 11V7a4 4 0 0 0-8 0v4M5 9h14l1 12H4L5 9z"></path>
+              </svg>
+            </div>
+            <h3>Catálogos + E-commerce Básico</h3>
+            <p>Olvídate de inventarios complejos. Carga productos desde Firebase, muestra fotos y agrega botón de pago o WhatsApp directo para cada prenda.</p>
+            <ul class="check-list">
+              <li>Panel de carga de productos</li>
+              <li>Conexión con Firebase</li>
+              <li>Diseño responsive para móvil</li>
+            </ul>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-icon amber" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M15 15l-2 5L9 9l11 4-5 2zm0 0 5 5"></path>
+              </svg>
+            </div>
+            <h3>Landing Pages de Captación</h3>
+            <p>Páginas de una sola pestaña diseñadas específicamente para captar leads, registrar correos o agendar citas. Ideales para campañas de marketing.</p>
+            <ul class="check-list">
+              <li>Formularios optimizados</li>
+              <li>Integración con Email/WhatsApp</li>
+              <li>Análisis de conversión</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transición sutil: imágenes abstractas entre servicios y paquetes, sin romper el diseño original. -->
+    <section class="energy-strip" aria-label="Detalle visual XR Studio">
+      <div class="container energy-inner reveal">
+        <img src="assets/energy-violet.jfif" alt="Detalle abstracto violeta">
+        <div>
+          <span class="section-kicker">Detalle multimedia</span>
+          <p>Texturas visuales sutiles para que el sitio tenga movimiento y personalidad sin sentirse cargado.</p>
+        </div>
+        <img src="assets/energy-flower.jfif" alt="Detalle abstracto luminoso">
+      </div>
+    </section>
+
+    <!-- Paquetes: mantiene la lógica del diseño original con tarjetas y botones redondeados. -->
+    <section class="section packages" id="paquetes">
+      <div class="package-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Paquetes</span>
+          <h2>Elige el plan ideal para ti</h2>
+          <p>Cada paquete está diseñado para cubrir las necesidades específicas de tu tipo de negocio. Incluye todo lo necesario para empezar.</p>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card reveal">
+            <div>
+              <h3>Web Presencial Básica</h3>
+              <p class="package-subtitle">Perfecto para negocios locales</p>
+              <p class="price">$150 <span>/único</span></p>
+              <p>Ideal para negocios que solo quieren estar presentes en Google y ofrecer información clara a sus clientes.</p>
+            </div>
+            <ul class="check-list">
+              <li>Diseño UI personalizado en HTML/CSS/JS</li>
+              <li>Chat de soporte básico</li>
+              <li>Hosting y dominio incluido</li>
+              <li>Optimización SEO básica</li>
+            </ul>
+            <a class="btn btn-outline whatsapp-link" href="#" target="_blank" rel="noopener">Cotizar este plan</a>
+          </article>
+
+          <article class="package-card featured reveal">
+            <span class="popular">Más popular</span>
+            <div>
+              <h3>Web + Catálogo Firebase</h3>
+              <p class="package-subtitle">Para tiendas y showrooms</p>
+              <p class="price">$350 <span>/único</span></p>
+              <p>Ideal para tiendas de ropa, reposterías y showrooms que necesitan mostrar sus productos de forma profesional.</p>
+            </div>
+            <ul class="check-list">
+              <li>Todo lo del plan anterior</li>
+              <li>Panel administrador en Firebase</li>
+              <li>Botones de WhatsApp / Pago</li>
+              <li>Soporte para agregar productos</li>
+            </ul>
+            <a class="btn btn-primary whatsapp-link" href="#" target="_blank" rel="noopener">Cotizar este plan</a>
+          </article>
+
+          <article class="package-card reveal">
+            <div>
+              <h3>Llave en Mano (Web + Foto)</h3>
+              <p class="package-subtitle">Para marcas sin material visual</p>
+              <p class="price">$600 <span>/único</span></p>
+              <p>Perfecto para restaurantes, cafeterías y marcas que necesitan fotos profesionales y una web lista para usar.</p>
+            </div>
+            <ul class="check-list">
+              <li>Todo lo del plan Catálogo</li>
+              <li>Sesión fotográfica profesional</li>
+              <li>Edición y retoque de imágenes</li>
+              <li>Entrega lista en 2 semanas</li>
+            </ul>
+            <a class="btn btn-outline whatsapp-link" href="#" target="_blank" rel="noopener">Cotizar este plan</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso: mantiene los círculos numerados del desarrollo original. -->
+    <section class="section process" id="proceso">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Proceso</span>
+          <h2>Cómo trabajamos juntos</h2>
+          <p>Un proceso simple y transparente para llevar tu idea a la realidad.</p>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-step reveal">
+            <span>01</span>
+            <h3>Descubrimiento</h3>
+            <p>Analizamos tu negocio, objetivos y público objetivo para definir la mejor estrategia.</p>
+          </article>
+          <article class="process-step reveal">
+            <span>02</span>
+            <h3>Diseño</h3>
+            <p>Creamos el diseño UI/UX en Figma o directamente en código según tus preferencias.</p>
+          </article>
+          <article class="process-step reveal">
+            <span>03</span>
+            <h3>Desarrollo</h3>
+            <p>Convertimos el diseño en una web funcional, rápida y lista para publicarse.</p>
+          </article>
+          <article class="process-step reveal">
+            <span>04</span>
+            <h3>Lanzamiento</h3>
+            <p>Publicamos tu sitio online y te acompañamos con soporte y capacitación.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portafolio visual: sin imagen fija, solo espacios para futuros proyectos o enlaces. -->
+    <section class="section portfolio" id="portafolio">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Portafolio visual</span>
+          <h2>Espacio para tus próximos sitios creados</h2>
+          <p>Estos bloques quedan listos para agregar capturas, enlaces reales o mini descripciones de proyectos cuando los tengas.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <a class="portfolio-slot reveal" href="#" aria-label="Agregar proyecto 1">
+            <span>Proyecto 01</span>
+            <strong>Captura o enlace del sitio</strong>
+            <small>Agregar URL cuando esté listo</small>
+          </a>
+          <a class="portfolio-slot reveal" href="#" aria-label="Agregar proyecto 2">
+            <span>Proyecto 02</span>
+            <strong>Captura o enlace del sitio</strong>
+            <small>Agregar URL cuando esté listo</small>
+          </a>
+          <a class="portfolio-slot reveal" href="#" aria-label="Agregar proyecto 3">
+            <span>Proyecto 03</span>
+            <strong>Captura o enlace del sitio</strong>
+            <small>Agregar URL cuando esté listo</small>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opiniones: sección social debajo del portafolio visual. -->
+    <section class="section testimonials" id="opiniones">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Opiniones</span>
+          <h2>La experiencia que busco dar a cada cliente</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal">
+            <p>"La página quedó limpia, moderna y muy fácil de compartir con nuestros clientes. Ahora recibimos mensajes más directos."</p>
+            <div><span>AR</span><strong>Andrea R.</strong><small>Marca local</small></div>
+          </article>
+          <article class="testimonial-card reveal">
+            <p>"Nos ayudó a mostrar el menú, ubicación y contacto con una imagen mucho más profesional para el negocio."</p>
+            <div><span>LC</span><strong>Luis C.</strong><small>Cafetería</small></div>
+          </article>
+          <article class="testimonial-card reveal">
+            <p>"El catálogo fue justo lo que necesitábamos: algo elegante, simple de administrar y útil para vender por WhatsApp."</p>
+            <div><span>MS</span><strong>María S.</strong><small>Boutique</small></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ: acordeón editable para preguntas frecuentes. -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">Preguntas frecuentes</span>
+          <h2>Respuestas rápidas antes de comenzar</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <article class="faq-item is-open">
+            <button type="button" aria-expanded="true">¿Cuánto tiempo tarda una página web?<span>+</span></button>
+            <div class="faq-answer"><p>Depende del alcance, pero una web básica puede estar lista en pocos días y un catálogo o proyecto con más contenido toma un poco más.</p></div>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false">¿Puedo pedir cambios después de ver el diseño?<span>+</span></button>
+            <div class="faq-answer"><p>Sí. La idea es ajustar el resultado para que se sienta alineado con tu marca, tus textos y el objetivo del sitio.</p></div>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false">¿También ayudas con hosting y publicación?<span>+</span></button>
+            <div class="faq-answer"><p>Sí, puedo orientarte para publicarlo y dejarlo listo para compartir con tus clientes.</p></div>
+          </article>
+          <article class="faq-item">
+            <button type="button" aria-expanded="false">¿El catálogo con Firebase se puede actualizar fácilmente?<span>+</span></button>
+            <div class="faq-answer"><p>Sí. Firebase permite guardar información en la nube para que productos, mensajes o solicitudes se puedan consultar después.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre mi: espacio para foto y descripción personal. -->
+    <section class="section about" id="sobre-mi">
+      <div class="container about-grid">
+        <div class="photo-placeholder reveal">
+          <span>Tu foto</span>
+        </div>
+        <div class="about-copy reveal">
+          <span class="section-kicker">Sobre mí</span>
+          <h2>Un espacio para contar quién está detrás de XR Studio</h2>
+          <p>Aquí puedes presentar tu forma de trabajar, lo que cuidas en cada proyecto y el tipo de clientes que quieres ayudar.</p>
+          <p>El bloque ya está preparado para cambiar el placeholder por una foto real cuando quieras.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto: formulario preparado para guardar leads localmente y conectar Firebase. -->
+    <section class="section contact" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="section-kicker">Contacto</span>
+          <h2>¿Listo para empezar?</h2>
+          <p>Cuéntame sobre tu proyecto. Estoy disponible para escuchar tus ideas y ofrecerte la mejor solución. Respondo en menos de 24 horas.</p>
+          <div class="contact-methods">
+            <div>
+              <span class="method-icon">✉</span>
+              <p><strong>Email</strong><br>contacto@xrstudio.com</p>
+            </div>
+            <div>
+              <span class="method-icon whatsapp-mini">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path></svg>
+              </span>
+              <p><strong>WhatsApp</strong><br>Configurar tu número</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-row">
+            <label>Nombre<input type="text" name="name" placeholder="Tu nombre" required></label>
+            <label>Contacto<input type="text" name="contact" placeholder="WhatsApp o correo" required></label>
+          </div>
+          <label>
+            Servicio de interés
+            <select name="project" required>
+              <option value="">Selecciona una opción</option>
+              <option>Web Corporativa + Chat</option>
+              <option>Catálogo + Firebase</option>
+              <option>Landing Page</option>
+              <option>Paquete Web Presencial Básica</option>
+              <option>Paquete Web + Catálogo</option>
+              <option>Paquete Llave en Mano</option>
+              <option>Otro / Cotización personalizada</option>
+            </select>
+          </label>
+          <label>Mensaje<textarea name="message" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea></label>
+          <button class="btn btn-primary" type="submit">Guardar solicitud</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Botón flotante: vector oficial de WhatsApp y enlace configurado desde script.js. -->
+  <a class="whatsapp-float whatsapp-link" href="#" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"></path>
+    </svg>
+  </a>
+
+  <!-- Footer: cierre simple de marca. -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>XR Studio - Diseño web, multimedia y presencia digital.</p>
+      <a href="#inicio">Volver arriba</a>
+    </div>
+  </footer>
+
+  <script src="script.js?v=3"></script>
+</body>
+</html>
