@@ -12,7 +12,7 @@ document.body.classList.add("js-enabled");
 // Ejemplo Mexico: 5215512345678. No uses espacios, guiones ni signo +.
 // =========================================================
 const WHATSAPP_NUMBER = "528128663480";
-const WHATSAPP_MESSAGE = "Hola XR Studio, quiero cotizar una web.";
+const WHATSAPP_MESSAGE = "Hola XR Studio, quiero cotizar una página para mi negocio.";
 
 // =========================================================
 // WHATSAPP
