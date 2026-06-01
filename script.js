@@ -1,7 +1,6 @@
 /*
-  XR Studio - Interactividad principal
-  Aqui se controla menu movil, enlaces de WhatsApp, animaciones al hacer scroll,
-  acordeon de preguntas frecuentes y el formulario de contacto.
+  XR Studio - Interactividad principal.
+  Controla menu movil, enlaces de WhatsApp, animaciones, FAQ y formulario.
 */
 
 document.body.classList.add("js-enabled");
@@ -12,12 +11,25 @@ document.body.classList.add("js-enabled");
 // Ejemplo Mexico: 5215512345678. No uses espacios, guiones ni signo +.
 // =========================================================
 const WHATSAPP_NUMBER = "528128663480";
-const WHATSAPP_MESSAGE = "Hola XR Studio, quiero cotizar una página para mi negocio.";
+const WHATSAPP_MESSAGE = "Hola XR Studio, quiero cotizar una pagina para mi negocio.";
+
+// =========================================================
+// EMAILJS
+// La clave publica puede vivir en frontend; nunca pongas aqui la clave privada.
+// =========================================================
+const EMAILJS_SERVICE_ID = "portafolio_id";
+const EMAILJS_TEMPLATE_ID = "template_yehhb3n";
+const EMAILJS_PUBLIC_KEY = "N-65HjyUrrhrD9JXy";
+
+if (window.emailjs) {
+  window.emailjs.init({
+    publicKey: EMAILJS_PUBLIC_KEY,
+  });
+}
 
 // =========================================================
 // WHATSAPP
 // Todos los elementos con clase .whatsapp-link reciben el mismo enlace.
-// Asi el boton flotante, botones de paquetes y CTA principal apuntan igual.
 // =========================================================
 const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
@@ -91,11 +103,12 @@ document.querySelectorAll(".faq-item button").forEach((button) => {
 
 // =========================================================
 // FORMULARIO DE CONTACTO
-// Por ahora guarda una copia en localStorage para que puedas probarlo sin backend.
-// Mas abajo esta el bloque comentado para conectarlo a Firebase Firestore.
+// Envia solicitudes al correo configurado en EmailJS.
 // =========================================================
 const contactForm = document.querySelector("#contactForm");
 const formStatus = document.querySelector("#formStatus");
+const createdAtInput = document.querySelector("#createdAt");
+const submitButton = contactForm?.querySelector('button[type="submit"]');
 
 contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -106,68 +119,51 @@ contactForm?.addEventListener("submit", async (event) => {
     contact: String(formData.get("contact") || "").trim(),
     project: String(formData.get("project") || "").trim(),
     message: String(formData.get("message") || "").trim(),
-    createdAt: new Date().toISOString(),
   };
 
   if (!lead.name || !lead.contact || !lead.project || !lead.message) {
-    setFormStatus("Completa todos los campos para guardar tu solicitud.", false);
+    setFormStatus("Completa todos los campos para enviar tu solicitud.", false);
     return;
   }
 
+  if (!window.emailjs) {
+    setFormStatus("No se pudo cargar el servicio de correo. Escribeme por WhatsApp.", false);
+    return;
+  }
+
+  if (createdAtInput) {
+    createdAtInput.value = new Date().toLocaleString("es-MX", {
+      dateStyle: "medium",
+      timeStyle: "short",
+    });
+  }
+
   try {
-    saveLeadLocally(lead);
+    setSubmitState(true);
+    setFormStatus("Enviando...", true);
 
-    /*
-      FIREBASE FIRESTORE - COMO ACTIVARLO
-
-      1. Crea un proyecto en https://console.firebase.google.com/
-      2. En "Build > Firestore Database", crea una base de datos.
-      3. En "Project settings > General", agrega una app web y copia firebaseConfig.
-      4. Reemplaza saveLeadLocally(lead) por saveLeadToFirebase(lead).
-      5. Descomenta los imports y la funcion saveLeadToFirebase de abajo.
-
-      Imports para poner arriba del archivo si usas type="module" en el script:
-
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-      import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-      const firebaseConfig = {
-        apiKey: "TU_API_KEY",
-        authDomain: "TU_PROYECTO.firebaseapp.com",
-        projectId: "TU_PROYECTO",
-        storageBucket: "TU_PROYECTO.appspot.com",
-        messagingSenderId: "TU_SENDER_ID",
-        appId: "TU_APP_ID"
-      };
-
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-
-      async function saveLeadToFirebase(leadData) {
-        await addDoc(collection(db, "leads"), {
-          ...leadData,
-          createdAt: serverTimestamp()
-        });
-      }
-    */
+    await window.emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm);
 
     contactForm.reset();
-    setFormStatus("Listo. Solicitud guardada localmente para prueba.", true);
+    setFormStatus("Solicitud enviada. Te respondere pronto.", true);
   } catch (error) {
-    console.error("No se pudo guardar la solicitud:", error);
-    setFormStatus("No se pudo guardar. Intenta de nuevo o escríbeme por WhatsApp.", false);
+    console.error("No se pudo enviar la solicitud:", error);
+    setFormStatus("No se pudo enviar. Escribeme por WhatsApp.", false);
+  } finally {
+    setSubmitState(false);
   }
 });
-
-function saveLeadLocally(lead) {
-  const savedLeads = JSON.parse(localStorage.getItem("xrStudioLeads") || "[]");
-  savedLeads.push(lead);
-  localStorage.setItem("xrStudioLeads", JSON.stringify(savedLeads));
-}
 
 function setFormStatus(message, isSuccess) {
   if (!formStatus) return;
 
   formStatus.textContent = message;
   formStatus.style.color = isSuccess ? "var(--cyan)" : "#ff9dbd";
+}
+
+function setSubmitState(isSending) {
+  if (!submitButton) return;
+
+  submitButton.disabled = isSending;
+  submitButton.textContent = isSending ? "Enviando..." : "Enviar solicitud";
 }

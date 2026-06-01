@@ -11,13 +11,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="XR Studio crea páginas web sencillas, modernas y adaptadas a celular para negocios y emprendedores.">
   <title>XR Studio | Páginas web para negocios</title>
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <!-- Header fijo: navegación principal y botón de contacto. -->
   <header class="site-header" id="inicio">
-    <a class="brand" href="#inicio" aria-label="Ir al inicio de XR Studio">
-      <span>XR</span><strong>Studio</strong>
+    <a class="brand" href="#inicio" aria-label="Volver al inicio de XR Studio">
+      <img class="brand-mark" src="assets/xr-digital-mark.png" alt="" aria-hidden="true">
+      <span class="brand-name"><span>XR</span><strong>Studio</strong></span>
     </a>
 
     <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
@@ -165,18 +166,6 @@
             </ul>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- Transición sutil: imágenes abstractas entre servicios y paquetes, sin romper el diseño original. -->
-    <section class="energy-strip" aria-label="Detalle visual XR Studio">
-      <div class="container energy-inner reveal">
-        <img src="assets/energy-violet.jfif" alt="Detalle abstracto violeta">
-        <div>
-          <span class="section-kicker">Detalle multimedia</span>
-          <p>Texturas visuales sutiles para que el sitio tenga movimiento y personalidad sin sentirse cargado.</p>
-        </div>
-        <img src="assets/energy-flower.jfif" alt="Detalle abstracto luminoso">
       </div>
     </section>
 
@@ -409,6 +398,7 @@
         </div>
 
         <form class="contact-form reveal" id="contactForm">
+          <input type="hidden" name="createdAt" id="createdAt">
           <div class="form-row">
             <label>Nombre<input type="text" name="name" placeholder="Tu nombre" required></label>
             <label>Contacto<input type="text" name="contact" placeholder="WhatsApp o correo" required></label>
@@ -421,10 +411,10 @@
               <option>Catálogo de productos o servicios</option>
               <option>Formulario de contacto</option>
               <option>Diseño para redes sociales</option>
-              <option>Sistema sencillo</option>
+              <option>Sistemas sencillos</option>
               <option>Paquete Inicio</option>
               <option>Paquete Negocio</option>
-              <option>Paquete Empresa</option>
+              <option>Paquete Personalizado</option>
               <option>Otro / Cotización personalizada</option>
             </select>
           </label>
@@ -451,6 +441,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
