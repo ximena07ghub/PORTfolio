@@ -102,18 +102,31 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0;
+  gap: 10px;
   min-width: 0;
   font-size: clamp(1.25rem, 3vw, 1.55rem);
   font-weight: 850;
   letter-spacing: 0;
 }
 
-.brand span {
+.brand-mark {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(141, 92, 255, 0.28));
+}
+
+.brand-name {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.brand-name span {
   color: #a98aff;
 }
 
-.brand strong {
+.brand-name strong {
   color: var(--text);
 }
 
@@ -309,6 +322,12 @@ h3 {
 
 .btn:hover {
   transform: translateY(-2px);
+}
+
+.btn:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
 }
 
 .btn-primary {

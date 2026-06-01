@@ -9,15 +9,16 @@
   -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="XR Studio crea páginas web sencillas, modernas y adaptadas a celular para negocios y emprendedores.">
-  <title>XR Studio | Páginas web para negocios</title>
-  <link rel="stylesheet" href="styles.css?v=3">
+  <meta name="description" content="XR Digital crea páginas web sencillas, modernas y adaptadas a celular para negocios y emprendedores.">
+  <title>XR Digital | Páginas web para negocios</title>
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <!-- Header fijo: navegación principal y botón de contacto. -->
   <header class="site-header" id="inicio">
-    <a class="brand" href="#inicio" aria-label="Ir al inicio de XR Studio">
-      <span>XR</span><strong>Studio</strong>
+    <a class="brand" href="#inicio" aria-label="Volver al inicio de XR Digital">
+      <img class="brand-mark" src="assets/xr-digital-mark.png" alt="" aria-hidden="true">
+      <span class="brand-name"><span>XR</span><strong>Digital</strong></span>
     </a>
 
     <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
@@ -40,7 +41,7 @@
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-inner reveal">
-        <p class="pill">Páginas web para negocios y emprendedores</p>
+        <p class="pill"> Presencia web para negocios y emprendedores</p>
         <h1>Haz que más personas <span>conozcan tu negocio</span></h1>
         <p class="hero-text">Creo páginas web sencillas, modernas y adaptadas a celular para que tus clientes puedan ver lo que ofreces, conocer tu información y contactarte directo por WhatsApp.</p>
         <div class="hero-actions">
@@ -56,7 +57,7 @@
         <!-- Métricas: igual que la intención original, sin recuadros. -->
         <div class="metrics" aria-label="Indicadores de XR Studio">
           <article>
-            <strong>50+</strong>
+            <strong>10+</strong>
             <span>Proyectos entregados</span>
           </article>
           <article>
@@ -171,12 +172,10 @@
     <!-- Transición sutil: imágenes abstractas entre servicios y paquetes, sin romper el diseño original. -->
     <section class="energy-strip" aria-label="Detalle visual XR Studio">
       <div class="container energy-inner reveal">
-        <img src="assets/energy-violet.jfif" alt="Detalle abstracto violeta">
         <div>
           <span class="section-kicker">Detalle multimedia</span>
-          <p>Texturas visuales sutiles para que el sitio tenga movimiento y personalidad sin sentirse cargado.</p>
+          <p>""</p>
         </div>
-        <img src="assets/energy-flower.jfif" alt="Detalle abstracto luminoso">
       </div>
     </section>
 
@@ -195,7 +194,7 @@
             <div>
               <h3>Paquete Inicio</h3>
               <p class="package-subtitle">Ideal para emprendedores o negocios que quieren empezar a tener presencia en internet.</p>
-              <p class="price">Desde $450 MXN</p>
+              <p class="price">Desde $350 MXN</p>
             </div>
             <ul class="check-list">
               <li>Página web sencilla de una sola vista</li>
@@ -216,7 +215,7 @@
             <div>
               <h3>Paquete Negocio</h3>
               <p class="package-subtitle">Para negocios que quieren mostrar más información y verse más profesionales.</p>
-              <p class="price">Desde $950 MXN</p>
+              <p class="price">Desde $850 MXN</p>
             </div>
             <ul class="check-list">
               <li>Todo lo del paquete Inicio</li>
@@ -233,9 +232,9 @@
 
           <article class="package-card reveal">
             <div>
-              <h3>Paquete Empresa</h3>
-              <p class="package-subtitle">Para proyectos que necesitan funciones más completas o personalizadas.</p>
-              <p class="price">Desde $1,800 MXN</p>
+              <h3>Paquete Personalizado</h3>
+              <p class="package-subtitle">Para proyectos que necesitan funciones más completas.</p>
+              <p class="price">Desde $1,300 MXN</p>
             </div>
             <ul class="check-list">
               <li>Todo lo del paquete Negocio</li>
@@ -245,6 +244,7 @@
               <li>Funciones personalizadas según el proyecto</li>
               <li>Integración con formularios o sistemas</li>
               <li>Asesoría para publicación final</li>
+              <p class="package-subtitle">Se cotiza según lo que necesite el proyecto.</p>
             </ul>
             <a class="btn btn-outline whatsapp-link" href="#" target="_blank" rel="noopener">Cotizar este plan</a>
           </article>
@@ -409,6 +409,7 @@
         </div>
 
         <form class="contact-form reveal" id="contactForm">
+          <input type="hidden" name="createdAt" id="createdAt">
           <div class="form-row">
             <label>Nombre<input type="text" name="name" placeholder="Tu nombre" required></label>
             <label>Contacto<input type="text" name="contact" placeholder="WhatsApp o correo" required></label>
@@ -451,6 +452,7 @@
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
