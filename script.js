@@ -1,6 +1,6 @@
 /*
   XR Studio - Interactividad principal.
-  Controla menu movil, enlaces de WhatsApp, animaciones, FAQ y formulario.
+  Controla menu movil, enlaces de WhatsApp, animaciones y FAQ.
 */
 
 document.body.classList.add("js-enabled");
@@ -12,20 +12,6 @@ document.body.classList.add("js-enabled");
 // =========================================================
 const WHATSAPP_NUMBER = "528128663480";
 const WHATSAPP_MESSAGE = "Hola XR Studio, quiero cotizar una pagina para mi negocio.";
-
-// =========================================================
-// EMAILJS
-// La clave publica puede vivir en frontend; nunca pongas aqui la clave privada.
-// =========================================================
-const EMAILJS_SERVICE_ID = "portafolio_id";
-const EMAILJS_TEMPLATE_ID = "template_yehhb3n";
-const EMAILJS_PUBLIC_KEY = "N-65HjyUrrhrD9JXy";
-
-if (window.emailjs) {
-  window.emailjs.init({
-    publicKey: EMAILJS_PUBLIC_KEY,
-  });
-}
 
 // =========================================================
 // WHATSAPP
@@ -100,70 +86,3 @@ document.querySelectorAll(".faq-item button").forEach((button) => {
     button.setAttribute("aria-expanded", String(isOpen));
   });
 });
-
-// =========================================================
-// FORMULARIO DE CONTACTO
-// Envia solicitudes al correo configurado en EmailJS.
-// =========================================================
-const contactForm = document.querySelector("#contactForm");
-const formStatus = document.querySelector("#formStatus");
-const createdAtInput = document.querySelector("#createdAt");
-const submitButton = contactForm?.querySelector('button[type="submit"]');
-
-contactForm?.addEventListener("submit", async (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(contactForm);
-  const lead = {
-    name: String(formData.get("name") || "").trim(),
-    contact: String(formData.get("contact") || "").trim(),
-    project: String(formData.get("project") || "").trim(),
-    message: String(formData.get("message") || "").trim(),
-  };
-
-  if (!lead.name || !lead.contact || !lead.project || !lead.message) {
-    setFormStatus("Completa todos los campos para enviar tu solicitud.", false);
-    return;
-  }
-
-  if (!window.emailjs) {
-    setFormStatus("No se pudo cargar el servicio de correo. Escribeme por WhatsApp.", false);
-    return;
-  }
-
-  if (createdAtInput) {
-    createdAtInput.value = new Date().toLocaleString("es-MX", {
-      dateStyle: "medium",
-      timeStyle: "short",
-    });
-  }
-
-  try {
-    setSubmitState(true);
-    setFormStatus("Enviando...", true);
-
-    await window.emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm);
-
-    contactForm.reset();
-    setFormStatus("Solicitud enviada. Te respondere pronto.", true);
-  } catch (error) {
-    console.error("No se pudo enviar la solicitud:", error);
-    setFormStatus("No se pudo enviar. Escribeme por WhatsApp.", false);
-  } finally {
-    setSubmitState(false);
-  }
-});
-
-function setFormStatus(message, isSuccess) {
-  if (!formStatus) return;
-
-  formStatus.textContent = message;
-  formStatus.style.color = isSuccess ? "var(--cyan)" : "#ff9dbd";
-}
-
-function setSubmitState(isSending) {
-  if (!submitButton) return;
-
-  submitButton.disabled = isSending;
-  submitButton.textContent = isSending ? "Enviando..." : "Enviar solicitud";
-}

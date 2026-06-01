@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="XR Studio crea páginas web sencillas, modernas y adaptadas a celular para negocios y emprendedores.">
   <title>XR Studio | Páginas web para negocios</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
   <!-- Header fijo: navegación principal y botón de contacto. -->
@@ -375,13 +375,13 @@
       </div>
     </section>
 
-    <!-- Contacto: formulario preparado para guardar solicitudes localmente. -->
+    <!-- Contacto: CTA directo a WhatsApp. -->
     <section class="section contact" id="contacto">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
           <span class="section-kicker">Contacto</span>
           <h2>¿Quieres una página para tu negocio?</h2>
-          <p>Cuéntame qué vendes o qué servicio ofreces y te ayudo a elegir la mejor opción para empezar.</p>
+          <p>Cuéntame qué vendes o qué servicio ofreces y te ayudo a elegir la mejor opción para empezar. La forma más rápida de cotizar es por WhatsApp.</p>
           <a class="btn btn-primary whatsapp-link contact-cta" href="#" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
           <div class="contact-methods">
             <div>
@@ -396,32 +396,6 @@
             </div>
           </div>
         </div>
-
-        <form class="contact-form reveal" id="contactForm">
-          <input type="hidden" name="createdAt" id="createdAt">
-          <div class="form-row">
-            <label>Nombre<input type="text" name="name" placeholder="Tu nombre" required></label>
-            <label>Contacto<input type="text" name="contact" placeholder="WhatsApp o correo" required></label>
-          </div>
-          <label>
-            Servicio de interés
-            <select name="project" required>
-              <option value="">Selecciona una opción</option>
-              <option>Página web para mi negocio</option>
-              <option>Catálogo de productos o servicios</option>
-              <option>Formulario de contacto</option>
-              <option>Diseño para redes sociales</option>
-              <option>Sistemas sencillos</option>
-              <option>Paquete Inicio</option>
-              <option>Paquete Negocio</option>
-              <option>Paquete Personalizado</option>
-              <option>Otro / Cotización personalizada</option>
-            </select>
-          </label>
-          <label>Mensaje<textarea name="message" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea></label>
-          <button class="btn btn-primary" type="submit">Enviar solicitud</button>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
       </div>
     </section>
   </main>
@@ -441,7 +415,6 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
